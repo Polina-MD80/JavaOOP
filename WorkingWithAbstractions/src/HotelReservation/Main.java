@@ -9,7 +9,6 @@ class Main {
     void main (String[] args) {
 
         Scanner scanner = new Scanner (System.in);
-
         String[] input = scanner.nextLine ().split ("\\s+");
 
         double pricePerDay = Double.parseDouble (input[0]);
