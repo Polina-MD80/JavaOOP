@@ -44,8 +44,6 @@ class Person {
         if (this.products.isEmpty ()) {
             sb.append ("Nothing bought");
         } else {
-
-
             for (int i = 0; i < products.size (); i++) {
                 if (i < products.size () - 1) {
                     sb.append (products.get (i).getName ()).append (", ");
@@ -56,7 +54,7 @@ class Person {
     }
 
     public
-    void byProduct (Product product) {
+    void buyProduct (Product product) {
         {
             if (this.money >= product.getCost ()) {
                 this.products.add (product);

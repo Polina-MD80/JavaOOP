@@ -1,8 +1,6 @@
 package ShoppingSpree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public
 class Main {
@@ -10,38 +8,13 @@ class Main {
     void main (String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        String[] peopleInfo = scanner.nextLine ().split (";");
-
-        List<Person> people = new ArrayList<> ();
-
-        for (int i = 0; i < peopleInfo.length; i++) {
-            String[] personInfo = peopleInfo[i].split ("=");
-            String name = personInfo[0];
-            double money = Double.parseDouble (personInfo[1].trim ());
-
-            try {
-                Person person = new Person (name,money);
-                people.add (person);
-            }catch (IllegalArgumentException ex){
-                System.out.println (ex.getMessage ());
-            }
-        }
-
-        List<Product> products = new ArrayList<> ();
-
-        String[] productsInfo = scanner.nextLine ().split (";");
-
-        for (int i = 0; i < productsInfo.length; i++) {
-            String[] currantProductInfo = productsInfo[i].split ("=");
-            String name = currantProductInfo[0];
-            double cost = Double.parseDouble (currantProductInfo[1].trim ());
-
-            try {
-                Product product = new Product (name,cost);
-                products.add (product);
-            }catch (IllegalArgumentException ex){
-                System.out.println (ex.getMessage ());
-            }
+        Map<String, Person> people;
+        Map<String,Product> products;
+        try {
+            people = setPeople (scanner);
+            products = setProducts (scanner);
+        }catch (IllegalArgumentException ex){
+            System.out.println (ex.getMessage ());return;
         }
 
         String command = scanner.nextLine ();
@@ -49,32 +22,40 @@ class Main {
         while (!"END".equals (command)){
             String[] tokens = command.split ("\\s+");
 
-            String personName = tokens[0];
-            String productName = tokens[1];
-
-
-
-            Product productToBy = null;
-            for (Product product : products) {
-                if (product.getName ().equals (productName)){
-                    productToBy = product;
-                }
-            }
-
-
-            for (Person person : people) {
-                if (person.getName ().equals (personName)){
-                    person.byProduct (productToBy);
-                }
-            }
-
-
+            people.get (tokens[0]).buyProduct (products.get (tokens[1]));
 
             command = scanner.nextLine ();
         }
 
-        people.forEach (System.out::println);
+
+        for (Map.Entry<String, Person> stringPersonEntry : people.entrySet ()) {
+            System.out.println (stringPersonEntry.getValue ());
+        }
 
 
+    }
+
+    private static
+    Map<String, Product> setProducts (Scanner scanner) {
+        Map<String,Product> products = new LinkedHashMap<> ();
+        String[] productsInfo = scanner.nextLine ().split (";");
+        for (int i = 0; i < productsInfo.length; i++) {
+            String[] tokens = productsInfo[i].split ("=");
+            Product product = new Product (tokens[0],Double.parseDouble (tokens[1]) );
+            products.put (tokens[0],product);
+        }
+        return products;
+    }
+
+    private static
+    Map<String, Person> setPeople (Scanner scanner) {
+        Map<String,Person> people = new LinkedHashMap<> ();
+        String[] peopleInfo = scanner.nextLine ().split (";");
+        for (int i = 0; i < peopleInfo.length; i++) {
+            String[] tokens = peopleInfo[i].split ("=");
+            Person person = new Person (tokens[0],Double.parseDouble (tokens[1]) );
+            people.put (tokens[0],person );
+        }
+        return people;
     }
 }
