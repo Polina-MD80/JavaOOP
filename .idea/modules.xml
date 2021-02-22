@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Encapsulation/Encapsulation.iml" filepath="$PROJECT_DIR$/Encapsulation/Encapsulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaOOP.iml" filepath="$PROJECT_DIR$/JavaOOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/WorkingWithAbstractions/WorkingWithAbstractions.iml" filepath="$PROJECT_DIR$/WorkingWithAbstractions/WorkingWithAbstractions.iml" />
