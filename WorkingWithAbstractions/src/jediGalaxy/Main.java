@@ -10,7 +10,7 @@ class Main {
     static int[][] galaxy;
     static int[] player;
     static int[] evil;
-    static int points;
+    static long points;
 
     public static
     void main (String[] args) {
