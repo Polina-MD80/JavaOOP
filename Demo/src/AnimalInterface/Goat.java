@@ -1,5 +1,7 @@
+package AnimalInterface;
+
 public
-class Goat extends Mammal{
+class Goat extends Mammal {
     @Override
     public
     void eat () {
