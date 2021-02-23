@@ -4,7 +4,7 @@ public
 class Seat implements Car {
     private String model;
     private String color;
-    private int horsePower;
+    private Integer horsePower;
     private String countryProduced;
 
     public
@@ -28,8 +28,7 @@ class Seat implements Car {
     }
 
     @Override
-    public
-    int getHorsePower () {
+    public Integer getHorsePower () {
         return this.horsePower;
     }
 
@@ -43,6 +42,6 @@ class Seat implements Car {
     public
     String toString () {
         return String.format ("This is %s produced in %s and have %d tires", this.model,
-                this.countryProduced, TIRES);
+                this.countryProduced, Car.TIRES);
     }
 }

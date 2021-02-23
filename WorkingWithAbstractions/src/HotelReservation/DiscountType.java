@@ -11,6 +11,7 @@ enum DiscountType {
     DiscountType (int discount) {
         this.discount = discount;
     }
+
     public int getDiscount(){
         return this.discount;
     }

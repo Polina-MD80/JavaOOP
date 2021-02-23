@@ -16,7 +16,8 @@ class PriceCalculator {
     }
 
    public void getPrice(){
-        double result = this.pricePerDay * this.days * this.season.getMultiplier () * (1 - this.discountType.getDiscount ()/100.00);
+        double result = this.pricePerDay * this.days * this.season.getMultiplier () *
+                        (1 - this.discountType.getDiscount ()/100.00);
         System.out.printf ("%.2f",result);
     }
 }

@@ -10,7 +10,7 @@ interface Car extends Serializable {
 
     String getColor ();
 
-    int getHorsePower ();
+    Integer getHorsePower ();
 
     String countryProduced ();
 
