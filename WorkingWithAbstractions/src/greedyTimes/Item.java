@@ -20,4 +20,10 @@ class Item {
     long getAmount () {
         return amount;
     }
+
+    @Override
+    public
+    String toString () {
+        return String.format ("##%s - %d", this.name , this.amount);
+    }
 }

@@ -39,10 +39,7 @@ class Bag {
         totalBagAmount += cash.getItem ().getAmount ();
     }
 
-    public static
-    void setTotalBagAmount (long totalBagAmount) {
-        Bag.totalBagAmount = totalBagAmount;
-    }
+
 
     public static
     long getTotalBagAmount () {

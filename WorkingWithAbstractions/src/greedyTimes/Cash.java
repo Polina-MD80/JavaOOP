@@ -28,11 +28,6 @@ class Cash extends Item implements Comparable<Cash>{
         return item;
     }
 
-    @Override
-    public
-    String toString () {
-       return String.format ("##%s - %d",this.item.getName (),this.item.getAmount ());
-    }
 
     @Override
     public

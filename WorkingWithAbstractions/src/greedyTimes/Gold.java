@@ -32,9 +32,4 @@ class Gold extends Item{
         return totalGoldAmount;
     }
 
-    @Override
-    public
-    String toString () {
-        return String.format ("<Gold> $%d%n##Gold - %d",totalGoldAmount,totalGoldAmount);
-    }
 }

@@ -31,11 +31,6 @@ class Gem extends Item implements Comparable<Gem> {
         return item;
     }
 
-    @Override
-    public
-    String toString () {
-        return String.format ("##%s - %d", this.item.getName (), this.item.getAmount ());
-    }
 
     @Override
     public
