@@ -13,7 +13,6 @@ class Main {
         String        input;
         while (!"Exit".equals (input = myReader.readLine ())) {
             try {
-
                 studentSystem.ParseCommand (inputParser.parsData (input));
             }catch (InputMismatchException ex){
                 System.out.println (ex.getMessage ());
