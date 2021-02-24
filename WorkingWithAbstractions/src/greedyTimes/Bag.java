@@ -24,19 +24,19 @@ class Bag {
     public
     void addGoldInBag (Gold gold) {
         goldList.add (gold);
-        totalBagAmount += gold.getItem ().getAmount ();
+        totalBagAmount += gold.amount;
     }
 
     public
     void addGemInBag (Gem gem) {
         gemList.add (gem);
-        totalBagAmount += gem.getItem ().getAmount ();
+        totalBagAmount += gem.amount;
     }
 
     public
     void addCashInBag (Cash cash) {
         cashList.add (cash);
-        totalBagAmount += cash.getItem ().getAmount ();
+        totalBagAmount += cash.amount;
     }
 
 
