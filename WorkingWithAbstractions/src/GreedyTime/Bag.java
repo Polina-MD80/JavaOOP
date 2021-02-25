@@ -8,6 +8,7 @@ import java.util.Map;
 public
 class Bag {
     private final long capacity;
+
     private static long currantSum;
     private static long currantGold;
     private static long currantGem;
@@ -23,7 +24,7 @@ class Bag {
         bagMap.put ("Cash", new HashMap<> ());
     }
 
-    public static
+    private static
     void calculateCurrantSums () {
         currantSum = getCurrantSum ();
         currantGold = getSum ("Gold");
