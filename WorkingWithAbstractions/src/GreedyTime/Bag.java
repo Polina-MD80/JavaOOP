@@ -8,10 +8,10 @@ import java.util.Map;
 public
 class Bag {
     static long capacity;
-    static long currantSum;
-    static long currantGold;
-    static long currantGem;
-    static long currantCash;
+    private static long currantSum;
+    private static long currantGold;
+    private static long currantGem;
+    private static long currantCash;
     private static LinkedHashMap<String, Map<String, Long>> bagMap;
 
     public
@@ -21,23 +21,27 @@ class Bag {
         bagMap.put ("Gem", new HashMap<> ());
         bagMap.put ("Cash", new HashMap<> ());
     }
+
     public static
     void calculateCurrantSums () {
-        currantSum  = getCurrantSum ();
+        currantSum = getCurrantSum ();
         currantGold = getSum ("Gold");
-        currantGem  = getSum ("Gem");
+        currantGem = getSum ("Gem");
         currantCash = getSum ("Cash");
     }
+
     private static
     long getCurrantSum () {
         return bagMap.values ().stream ().map (Map::values).flatMap (Collection::stream).mapToLong (e -> e).sum ();
     }
+
     private static
     long getSum (String typeOfItem) {
         return bagMap.get (typeOfItem).values ().stream ().mapToLong (e -> e).sum ();
     }
-    static
-    void  putTheItemInTheBag (String name, long amount) {
+
+    public static
+    void putTheItemInTheBagIfPossible(String name, long amount) {
         if (name.length () == 3) {
 
             if ((amount + currantCash) <= currantGem && currantSum + amount <= capacity) {
@@ -62,7 +66,8 @@ class Bag {
             }
         }
     }
-    static
+
+   public static
     void printTheTreasuresInTheBag () {
         for (Map.Entry<String, Map<String, Long>> typeOfTreasure : bagMap.entrySet ()) {
             if (!typeOfTreasure.getValue ().isEmpty ()) {

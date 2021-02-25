@@ -15,9 +15,8 @@ class Main {
         for (int i = 0; i < safe.length; i += 2) {
             String name   = safe[i];
             long   amount = Long.parseLong (safe[i + 1]);
-
             Bag.calculateCurrantSums ();
-            Bag.putTheItemInTheBag (name, amount);
+            Bag.putTheItemInTheBagIfPossible (name, amount);
         }
         Bag.printTheTreasuresInTheBag ();
 
