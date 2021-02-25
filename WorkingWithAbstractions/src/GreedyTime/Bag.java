@@ -46,28 +46,31 @@ class Bag {
 
             if ((amount + currantCash) <= currantGem && currantSum + amount <= capacity) {
                 bagMap.get ("Cash").putIfAbsent (name, 0L);
-                long newAmount = bagMap.get ("Cash").get (name) + amount;
-                bagMap.get ("Cash").put (name, newAmount);
+                putItemInMapBag (name, amount, "Cash");
             }
 
         } else if (name.toLowerCase ().endsWith ("gem")) {
 
             if (currantGold >= currantGem + amount && currantSum + amount <= capacity) {
                 bagMap.get ("Gem").putIfAbsent (name, 0L);
-                long newAmount = bagMap.get ("Gem").get (name) + amount;
-                bagMap.get ("Gem").put (name, newAmount);
+                putItemInMapBag (name, amount, "Gem");
             }
         } else if (name.equalsIgnoreCase ("gold")) {
 
             if (currantSum + amount <= capacity) {
                 bagMap.get ("Gold").putIfAbsent ("Gold", 0L);
-                long newAmount = bagMap.get ("Gold").get ("Gold") + amount;
-                bagMap.get ("Gold").put ("Gold", newAmount);
+                putItemInMapBag ("Gold", amount, "Gold");
             }
         }
     }
 
-   public static
+    private static
+    void putItemInMapBag (String name, long amount, String cash) {
+        long newAmount = bagMap.get (cash).get (name) + amount;
+        bagMap.get (cash).put (name, newAmount);
+    }
+
+    public static
     void printTheTreasuresInTheBag () {
         for (Map.Entry<String, Map<String, Long>> typeOfTreasure : bagMap.entrySet ()) {
             if (!typeOfTreasure.getValue ().isEmpty ()) {
