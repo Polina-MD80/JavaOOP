@@ -13,5 +13,4 @@ interface Car extends Serializable {
     Integer getHorsePower ();
 
     String countryProduced ();
-
 }

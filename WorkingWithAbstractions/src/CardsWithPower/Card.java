@@ -10,7 +10,12 @@ class Card {
     Card (Rank cardRank, Suit cardSuite) {
         this.cardRank = cardRank;
         this.cardSuite = cardSuite;
-        this.power = this.cardRank.getRank () + this.cardSuite.getSuit ();
+        setPower ();
+    }
+
+    private
+    void setPower () {
+        this.power = this.cardRank.getRank () + this.cardSuite.getSuit ();;
     }
 
     @Override

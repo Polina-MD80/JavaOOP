@@ -42,6 +42,6 @@ class Seat implements Car {
     public
     String toString () {
         return String.format ("This is %s produced in %s and have %d tires", this.model,
-                this.countryProduced, Car.TIRES);
+                this.countryProduced, TIRES);
     }
 }
