@@ -7,7 +7,7 @@ import java.util.Map;
 
 public
 class Bag {
-    static long capacity;
+    private final long capacity;
     private static long currantSum;
     private static long currantGold;
     private static long currantGem;
@@ -15,7 +15,8 @@ class Bag {
     private static LinkedHashMap<String, Map<String, Long>> bagMap;
 
     public
-    Bag () {
+    Bag (long capacity) {
+        this.capacity = capacity;
         bagMap = new LinkedHashMap<> (3);
         bagMap.put ("Gold", new HashMap<> ());
         bagMap.put ("Gem", new HashMap<> ());
@@ -40,24 +41,25 @@ class Bag {
         return bagMap.get (typeOfItem).values ().stream ().mapToLong (e -> e).sum ();
     }
 
-    public static
-    void putTheItemInTheBagIfPossible(String name, long amount) {
+    public
+    void putTheItemInTheBagIfPossible (String name, long amount) {
+        calculateCurrantSums ();
         if (name.length () == 3) {
 
-            if ((amount + currantCash) <= currantGem && currantSum + amount <= capacity) {
+            if ((amount + currantCash) <= currantGem && currantSum + amount <= this.capacity) {
                 bagMap.get ("Cash").putIfAbsent (name, 0L);
                 putItemInMapBag (name, amount, "Cash");
             }
 
         } else if (name.toLowerCase ().endsWith ("gem")) {
 
-            if (currantGold >= currantGem + amount && currantSum + amount <= capacity) {
+            if (currantGold >= currantGem + amount && currantSum + amount <= this.capacity) {
                 bagMap.get ("Gem").putIfAbsent (name, 0L);
                 putItemInMapBag (name, amount, "Gem");
             }
         } else if (name.equalsIgnoreCase ("gold")) {
 
-            if (currantSum + amount <= capacity) {
+            if (currantSum + amount <= this.capacity) {
                 bagMap.get ("Gold").putIfAbsent ("Gold", 0L);
                 putItemInMapBag ("Gold", amount, "Gold");
             }
