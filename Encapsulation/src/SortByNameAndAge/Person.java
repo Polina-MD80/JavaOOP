@@ -49,8 +49,8 @@ class Person {
     public
     void increaseSalary (double bonus) {
         if (this.getAge () < 30) {
-          this.setSalary ( this.getSalary () * (1 + bonus /200));
+            this.setSalary (this.getSalary () * (1 + bonus / 200));
         }
-        this.setSalary ( this.getSalary ()*(1+bonus/100));
+        this.setSalary (this.getSalary () * (1 + bonus / 100));
     }
 }
