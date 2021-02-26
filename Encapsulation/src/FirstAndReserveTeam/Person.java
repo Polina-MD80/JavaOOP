@@ -32,10 +32,6 @@ class Person {
         this.firstName = firstName;
     }
 
-    public
-    void setSecondName (String secondName) {
-        this.lastName = secondName;
-    }
 
     public
     void setAge (int age) {

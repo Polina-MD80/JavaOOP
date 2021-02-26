@@ -14,8 +14,10 @@ class Person {
         this.setAge (age);
         this.setSalary (salary);
     }
-    private void validateName(String name, String prefix){
-        if (name.length ()<3){
+
+    private
+    void validateName (String name, String prefix) {
+        if (name.length () < 3) {
             throw new IllegalArgumentException (prefix + " cannot be less than 3 symbols");
         }
     }
@@ -70,10 +72,11 @@ class Person {
 
     public
     void increaseSalary (double bonus) {
-        if (this.getAge () <= 30) {
+        if (this.getAge () < 30) {
             this.setSalary (this.getSalary () * (1 + bonus / 200));
+        } else {
+            this.setSalary (this.getSalary () * (1 + bonus / 100));
         }
-        this.setSalary (this.getSalary () * (1 + bonus / 100));
     }
 
     @Override
