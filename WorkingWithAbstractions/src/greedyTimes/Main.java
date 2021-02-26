@@ -17,16 +17,17 @@ class Main {
         for (int i = 0; i < safe.length; i += 2) {
             String name   = safe[i];
             long   amount = Long.parseLong (safe[i + 1]);
-            Item   item   = new Item (name, amount);
+
             try {
-                if (item.getName ().length () == 3) {
-                    Cash cash = new Cash (item);
-                    bag.addCashInBag (cash);
-                } else if (item.getName ().toLowerCase ().endsWith (("gem"))) {
-                    Gem gem = new Gem (item);
+                if (name.length () == 3) {
+                    Cash cash = new Cash (name,amount);
+                    if (cash.acceptItem ()){
+                    bag.addCashInBag (cash);}
+                } else if (name.toLowerCase ().endsWith (("gem"))) {
+                    Gem gem = new Gem (name,amount);
                     bag.addGemInBag (gem);
-                } else if (item.getName ().equalsIgnoreCase ("gold")) {
-                    Gold gold = new Gold (item);
+                } else if (name.equalsIgnoreCase ("gold")) {
+                    Gold gold = new Gold (name,amount);
                     bag.addGoldInBag (gold);
                 }
 
