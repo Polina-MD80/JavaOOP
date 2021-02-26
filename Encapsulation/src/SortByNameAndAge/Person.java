@@ -12,7 +12,7 @@ class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.setSalary (salary);
+        setSalary (salary);
     }
 
     public
@@ -29,6 +29,7 @@ class Person {
     String getLastName () {
         return this.lastName;
     }
+
 
     public
     void setSalary (double salary) {
