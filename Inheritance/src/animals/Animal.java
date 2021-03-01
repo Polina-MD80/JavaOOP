@@ -43,17 +43,20 @@ class Animal {
 
     private
     void setName (String name) {
+        validateString (name);
+        this.name = name;
+    }
+
+    private
+    void validateString (String name) {
         if (name == null || name.trim ().isEmpty ()) {
             throw new IllegalArgumentException ("Invalid input!");
         }
-        this.name = name;
     }
 
     public
     void setGender (String gender) {
-        if (gender == null || gender.trim ().isEmpty ()) {
-            throw new IllegalArgumentException ("Invalid input!");
-        }
+        validateString (gender);
         this.gender = gender;
     }
 
