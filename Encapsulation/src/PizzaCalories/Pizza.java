@@ -49,11 +49,8 @@ class Pizza {
 
     public
     double getOverallCalories () {
-        double calories = dough.calculateCalories ();
-        for (Topping topping : this.toppings) {
-            calories += topping.calculateCalories ();
-        }
-        return calories;
+
+        return this.dough.calculateCalories () + this.toppings.stream ().mapToDouble (Topping::calculateCalories).sum ();
     }
 
     @Override
