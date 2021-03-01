@@ -7,8 +7,6 @@ class Main {
     public static
     void main (String[] args) {
         Scanner scanner = new Scanner (System.in);
-        String name = scanner.nextLine ();
-        Car ferrari = new Ferrari (name);
-        System.out.print (ferrari);
+        System.out.print (new Ferrari (scanner.nextLine ()));
     }
 }
