@@ -21,13 +21,13 @@ class Main {
                     createTeam (teams, command[1]);
                     break;
                 case "Add":
-                    addPlayer (teams, command, false);
+                    addPlayer (teams, command,false);
                     break;
                 case "Remove":
                     removePlayer (teams, command);
                     break;
                 case "Rating":
-                    printTheRating (teams, command, false);
+                    printTheRating (teams, command);
                     break;
             }
         }
@@ -35,16 +35,17 @@ class Main {
     }
 
     private static
-    void printTheRating (List<Team> teams, String[] command, boolean teamIsInList) {
+    void printTheRating (List<Team> teams, String[] command) {
+        boolean teamIsInList = false;
         for (Team t : teams) {
             if (t.getName ().equals (command[1])) {
-                System.out.println (t.getName () + " - " + t.getRating ());
+                System.out.printf ("%s - %d",t.getName (), t.getRating ());
                 teamIsInList = true;
                 break;
             }
         }
         if (!teamIsInList) {
-            System.out.printf ("Team %s does not exist", command[1]);
+            System.out.printf ("Team %s does not exist.", command[1]);
         }
     }
 
@@ -75,7 +76,7 @@ class Main {
                 }
             }
             if (!teamIsInList) {
-                System.out.printf ("Team %s does not exist", command[1]);
+                System.out.printf ("Team %s does not exist.", command[1]);
             }
         }catch (IllegalArgumentException ex){
             System.out.println (ex.getMessage ());

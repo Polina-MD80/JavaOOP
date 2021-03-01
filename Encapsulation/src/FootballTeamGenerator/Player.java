@@ -42,6 +42,7 @@ class Player {
 
     private
     void setName (String name) {
+        validateName (name);
         this.name = name;
     }
 
