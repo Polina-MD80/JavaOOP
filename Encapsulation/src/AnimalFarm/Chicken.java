@@ -50,9 +50,5 @@ class Chicken {
         return String.format ("Chicken %s (age %d) can produce %.2f eggs per day.",
                 this.name,this.age,this.productPerDay ());
     }
-    //+	Chicken(String, int)
 
-    //+	productPerDay (): double
-    //+	toString(): Override
-    //-	calculateProductPerDay() : double
 }
