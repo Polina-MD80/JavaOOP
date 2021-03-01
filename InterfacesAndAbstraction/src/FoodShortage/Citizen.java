@@ -18,7 +18,7 @@ class Citizen implements Buyer,Person, Identifiable{
 
     @Override
     public
-    void byFood () {
+    void buyFood () {
         this.food = getFood () + 10;
     }
 

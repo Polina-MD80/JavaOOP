@@ -21,7 +21,7 @@ class Rebel implements Buyer, Person{
 
     @Override
     public
-    void byFood () {
+    void buyFood () {
         this.food = getFood () + 5;
     }
 

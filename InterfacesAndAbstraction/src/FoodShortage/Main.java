@@ -17,12 +17,12 @@ class Main {
 
             if (tokens.length == 3) {
                 Buyer rebel = new Rebel (tokens[0], Integer.parseInt (tokens[1]), tokens[2]);
-                rebel.byFood ();
+                rebel.buyFood ();
                 buyers.put (tokens[0], rebel);
 
             } else {
                 Buyer citizen = new Citizen (tokens[0], Integer.parseInt (tokens[1]), tokens[2], tokens[3]);
-                citizen.byFood ();
+                citizen.buyFood ();
                 buyers.put (tokens[0], citizen);
             }
         }

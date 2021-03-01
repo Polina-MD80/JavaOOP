@@ -2,6 +2,6 @@ package FoodShortage;
 
 public
 interface Buyer {
-    void byFood();
+    void buyFood();
     int getFood();
 }
