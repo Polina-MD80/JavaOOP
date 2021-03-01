@@ -29,7 +29,7 @@ class Person {
         return this.name;
     }
 
-    public
+    private
     void setMoney (double money) {
         if (money < 0) {
             throw new IllegalArgumentException ("Money cannot be negative");
