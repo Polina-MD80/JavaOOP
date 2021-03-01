@@ -12,8 +12,8 @@ class Pizza {
 
     public
     Pizza (String name, int numberOfToppings) {
-        this.setToppings (numberOfToppings);
         this.setName (name);
+        this.setToppings (numberOfToppings);
     }
 
     private

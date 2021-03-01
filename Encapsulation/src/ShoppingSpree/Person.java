@@ -55,15 +55,12 @@ class Person {
 
     public
     void buyProduct (Product product) {
-        {
-            if (this.money >= product.getCost ()) {
-                this.products.add (product);
-                this.money -= product.getCost ();
-                System.out.printf ("%s bought %s%n", this.name, product.getName ());
-            } else {
-                System.out.printf ("%s can't afford %s%n", this.name, product.getName ());
-            }
+        if (this.money < product.getCost ()) {
+            throw new IllegalArgumentException (this.name + " can't afford " + product.getName ());
         }
+        this.products.add (product);
+        this.money -= product.getCost ();
+        System.out.printf ("%s bought %s%n", this.name, product.getName ());
 
     }
 }

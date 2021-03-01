@@ -41,8 +41,8 @@ class Main {
         String[] productsInfo = scanner.nextLine ().split (";");
         for (int i = 0; i < productsInfo.length; i++) {
             String[] tokens = productsInfo[i].split ("=");
-            Product product = new Product (tokens[0],Double.parseDouble (tokens[1]) );
-            products.put (tokens[0],product);
+            Product product = new Product (tokens[0].trim (),Double.parseDouble (tokens[1].trim ()) );
+            products.put (tokens[0].trim (),product);
         }
         return products;
     }
@@ -53,8 +53,8 @@ class Main {
         String[] peopleInfo = scanner.nextLine ().split (";");
         for (int i = 0; i < peopleInfo.length; i++) {
             String[] tokens = peopleInfo[i].split ("=");
-            Person person = new Person (tokens[0],Double.parseDouble (tokens[1]) );
-            people.put (tokens[0],person );
+            Person person = new Person (tokens[0].trim (),Double.parseDouble (tokens[1].trim ()) );
+            people.put (tokens[0].trim (),person );
         }
         return people;
     }
