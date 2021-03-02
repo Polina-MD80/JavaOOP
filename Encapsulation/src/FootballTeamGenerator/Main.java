@@ -14,14 +14,14 @@ class Main {
         List<Team> teams = new ArrayList<> ();
 
         while (!"END".equals (input = scanner.nextLine ())) {
-            String[] command      = input.split (";");
+            String[] command = input.split (";");
 
             switch (command[0]) {
                 case "Team":
                     createTeam (teams, command[1]);
                     break;
                 case "Add":
-                    addPlayer (teams, command,false);
+                    addPlayer (teams, command, false);
                     break;
                 case "Remove":
                     removePlayer (teams, command);
@@ -39,7 +39,7 @@ class Main {
         boolean teamIsInList = false;
         for (Team t : teams) {
             if (t.getName ().equals (command[1])) {
-                System.out.printf ("%s - %d",t.getName (), t.getRating ());
+                System.out.printf ("%s - %d", t.getName (), t.getRating ());
                 teamIsInList = true;
                 break;
             }
@@ -78,7 +78,7 @@ class Main {
             if (!teamIsInList) {
                 System.out.printf ("Team %s does not exist.", command[1]);
             }
-        }catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             System.out.println (ex.getMessage ());
         }
     }

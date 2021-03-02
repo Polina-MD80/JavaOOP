@@ -7,13 +7,12 @@ public
 class Team {
 
     private String name;
-    private int rating;
     private List<Player> players;
 
     public
     Team (String name) {
         setName (name);
-        this.rating = 0;
+
         this.players = new ArrayList<> ();
     }
 
@@ -50,20 +49,7 @@ class Team {
         }
     }
 
-    public
-    long setRatting () {
-        double currRating = 0;
-        for (Player player : this.players) {
-            currRating += player.overallSkillLevel ();
-        }
-        if (currRating == 0) {
-            this.rating = (int) currRating;
-        } else {
-            currRating = (int) Math.round (currRating / players.size ());
-            this.rating = (int) currRating;
-        }
-        return this.rating;
-    }
+
 
     public
     int getRating () {
