@@ -6,7 +6,7 @@ class Main {
     void main (String[] args) {
         StackOfStrings sos = new StackOfStrings ();
         sos.push ("one");
-        sos.push ("tow");
+        sos.push ("two");
         sos.push ("three");
         System.out.println (sos.isEmpty ());
         System.out.println (sos.peek ());
