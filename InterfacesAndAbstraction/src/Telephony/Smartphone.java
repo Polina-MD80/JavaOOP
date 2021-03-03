@@ -11,12 +11,12 @@ class Smartphone implements Callable, Browsable {
 
     public
     Smartphone (List<String> numbers, List<String> urls) {
-        setNumbers (numbers);
-        setUrls (urls);
+        acceptNumbers (numbers);
+        acceptURLs (urls);
     }
 
     private
-    void setNumbers (List<String> numbers) {
+    void acceptNumbers (List<String> numbers) {
         this.numbers = new ArrayList<> ();
         for (String number : numbers) {
             boolean numberIsValid = true;
@@ -35,7 +35,7 @@ class Smartphone implements Callable, Browsable {
     }
 
     private
-    void setUrls (List<String> urls) {
+    void acceptURLs (List<String> urls) {
         this.urls = new ArrayList<> ();
         for (String url : urls) {
             boolean urlIsValid = true;
