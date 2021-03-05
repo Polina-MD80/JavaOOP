@@ -24,7 +24,7 @@ class Ferrari implements Car{
     @Override
     public
     String gas () {
-        return "Zadu6avam sA!";
+        return "brum-brum-brum-brrrrr";
     }
 
     @Override
