@@ -12,6 +12,7 @@ class Truck extends Vehicle{
     @Override
     protected
     void refuel (double litres) {
-        setFuelQuantity (getFuelQuantity () + litres* TANK_CORRECTION);
+       // setFuelQuantity (getFuelQuantity () + litres* TANK_CORRECTION);
+        super.refuel (litres*0.95);
     }
 }

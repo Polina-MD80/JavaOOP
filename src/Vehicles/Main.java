@@ -1,6 +1,6 @@
 package Vehicles;
 
-import java.text.DecimalFormat;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -21,21 +21,22 @@ class Main {
         for (int i = 0; i < n; i++) {
             String command = scanner.nextLine ();
             String[] tokens = command.split ("\\s+");
-            String vehicle = tokens[1].toLowerCase ();
+            String vehicle = tokens[1];
+            double amount = Double.parseDouble (tokens[2]);
 
 
             switch (tokens[0]){
                 case "Drive":
-                 if (vehicle.equals ("car")){
-                     car.drive (Double.parseDouble (tokens[2]));
+                 if (vehicle.equals ("Car")){
+                     car.drive (amount);
                  }else {
-                     truck.drive (Double.parseDouble (tokens[2]));
+                     truck.drive (amount);
                  };break;
                 case "Refuel":
-                    if (vehicle.equals ("car")){
-                        car.refuel (Double.parseDouble (tokens[2]));
+                    if (vehicle.equals ("Car")){
+                        car.refuel (amount);
                     }else {
-                        truck.refuel (Double.parseDouble (tokens[2]));
+                        truck.refuel (amount);
                     }
 
             }

@@ -2,7 +2,7 @@ package Vehicles;
 
 import java.text.DecimalFormat;
 
-public abstract
+public
 class Vehicle {
     private double fuelQuantity;
     private double fuelConsumption;
@@ -50,7 +50,6 @@ class Vehicle {
     @Override
     public
     String toString () {
-
         return  String.format ("%s: %.2f",getClass ().getSimpleName (), getFuelQuantity ());
     }
 }
