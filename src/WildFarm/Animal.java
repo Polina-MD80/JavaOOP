@@ -18,20 +18,12 @@ class Animal {
 
     }
 
-    protected
-    void setFoodEaten (Integer foodEaten) {
-        this.foodEaten += foodEaten;
-    }
-
     public
     Integer getFoodEaten () {
         return foodEaten;
     }
 
-    public
-    String getAnimalType () {
-        return animalType;
-    }
+
 
     public
     String getAnimalName () {
@@ -46,8 +38,10 @@ class Animal {
     protected abstract
     void makeSound ();
 
-    protected abstract
-    void eat (Food food);
+    protected
+    void eat (Food food){
+        this.foodEaten += food.getQuantity();
+    }
 
     protected
     DecimalFormat format () {

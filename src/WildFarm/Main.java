@@ -1,8 +1,6 @@
 package WildFarm;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public
 class Main {
@@ -10,6 +8,8 @@ class Main {
     void main (String[] args) {
 
         Scanner scanner = new Scanner (System.in);
+
+        List<Animal> animals = new ArrayList<> ();
 
 
         String input = scanner.nextLine ();
@@ -52,9 +52,12 @@ class Main {
 
             animal.makeSound ();
             animal.eat (food);
-            System.out.println (animal.toString ());
+            animals.add (animal);
 
             input = scanner.nextLine ();
+        }
+        for (Animal animal : animals) {
+            System.out.println (animal);
         }
     }
 

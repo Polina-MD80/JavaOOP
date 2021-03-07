@@ -2,7 +2,7 @@ package WildFarm;
 
 public
 class Zebra extends Mammal{
-    private static final String SOUND = "Zs";
+
     public
     Zebra (String animalType, String animalName, Double animalWeight, String livingRegion) {
         super (animalType, animalName, animalWeight, livingRegion);
@@ -11,14 +11,14 @@ class Zebra extends Mammal{
     @Override
     protected
     void makeSound () {
-        System.out.println (SOUND);
+        System.out.println ("Zs");
     }
 
     @Override
     protected
     void eat (Food food) {
-        if (food.getClass ().getSimpleName ().equals ("Vegetable")) {
-            super.setFoodEaten (food.getQuantity ());
+        if (food instanceof Vegetable) {
+            super.eat (food);
         } else {
             System.out.println ("Zebras are not eating that type of food!");
         }

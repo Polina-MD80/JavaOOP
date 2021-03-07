@@ -2,7 +2,6 @@ package WildFarm;
 
 public
 class Mouse extends Mammal {
-    private static final String SOUND = "SQUEEEAAAK!";
 
     public
     Mouse (String animalType, String animalName, Double animalWeight, String livingRegion) {
@@ -12,14 +11,14 @@ class Mouse extends Mammal {
     @Override
     protected
     void makeSound () {
-        System.out.println (SOUND);
+        System.out.println ("SQUEEEAAAK!");
     }
 
     @Override
     protected
     void eat (Food food) {
-        if (food.getClass ().getSimpleName ().equals ("Vegetable")) {
-            super.setFoodEaten (food.getQuantity ());
+        if (food instanceof Vegetable) {
+            super.eat (food);
         } else {
             System.out.println ("Mice are not eating that type of food!");
         }
