@@ -1,7 +1,5 @@
 package WildFarm;
 
-import java.text.DecimalFormat;
-
 public
 class Cat extends Felime {
     private String breed;
