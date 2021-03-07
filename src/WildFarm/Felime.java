@@ -2,12 +2,10 @@ package WildFarm;
 
 public abstract
 class Felime extends Mammal{
-    private String livingRegion;
+
+
     protected
-    Felime (String animalType, String animalName, Double animalWeight, String livingRegion) {
-        super (animalType, animalName, animalWeight, livingRegion);
-
+    Felime (String animalName, String animalType, Double animalWeight, String animalRegion) {
+        super (animalName, animalType, animalWeight, animalRegion);
     }
-
-
 }

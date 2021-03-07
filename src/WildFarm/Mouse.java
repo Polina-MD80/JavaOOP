@@ -3,9 +3,10 @@ package WildFarm;
 public
 class Mouse extends Mammal {
 
-    public
-    Mouse (String animalType, String animalName, Double animalWeight, String livingRegion) {
-        super (animalType, animalName, animalWeight, livingRegion);
+
+    protected
+    Mouse (String animalName, String animalType, Double animalWeight, String animalRegion) {
+        super (animalName, animalType, animalWeight, animalRegion);
     }
 
     @Override
@@ -17,11 +18,11 @@ class Mouse extends Mammal {
     @Override
     protected
     void eat (Food food) {
-        if (food instanceof Vegetable) {
-            super.eat (food);
-        } else {
-            System.out.println ("Mice are not eating that type of food!");
+        if (food instanceof Meat) {
+            throw new IllegalArgumentException(
+                    "Mice are not eating that type of food!");
         }
+        super.eat(food);
     }
 }
 

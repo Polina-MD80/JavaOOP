@@ -4,13 +4,14 @@ import java.text.DecimalFormat;
 
 public
 class Cat extends Felime {
-    private final String breed;
+    private String breed;
 
-    public
-    Cat (String animalType, String animalName, Double animalWeight, String livingRegion, String breed) {
-        super (animalType, animalName, animalWeight, livingRegion);
+    protected
+    Cat (String animalName, String animalType, Double animalWeight, String animalRegion, String breed) {
+        super (animalName, animalType, animalWeight, animalRegion);
         this.breed = breed;
     }
+
 
     public
     String getBreed () {

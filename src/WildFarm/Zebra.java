@@ -3,9 +3,10 @@ package WildFarm;
 public
 class Zebra extends Mammal{
 
-    public
-    Zebra (String animalType, String animalName, Double animalWeight, String livingRegion) {
-        super (animalType, animalName, animalWeight, livingRegion);
+
+    protected
+    Zebra (String animalName, String animalType, Double animalWeight, String animalRegion) {
+        super (animalName, animalType, animalWeight, animalRegion);
     }
 
     @Override
@@ -17,10 +18,10 @@ class Zebra extends Mammal{
     @Override
     protected
     void eat (Food food) {
-        if (food instanceof Vegetable) {
-            super.eat (food);
-        } else {
-            System.out.println ("Zebras are not eating that type of food!");
+        if (food instanceof Meat) {
+            throw new IllegalArgumentException(
+                    "Zebras are not eating that type of food!");
         }
+        super.eat(food);
     }
 }

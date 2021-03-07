@@ -4,18 +4,25 @@ import java.text.DecimalFormat;
 
 public abstract
 class Animal {
-    private String animalType;
     private String animalName;
+    private String animalType;
     private Double animalWeight;
+    private String livingRegion;
     private Integer foodEaten;
 
     protected
-    Animal (String animalType, String animalName, Double animalWeight) {
+    Animal (String animalName, String animalType, Double animalWeight, String livingRegion) {
         this.animalName = animalName;
         this.animalType = animalType;
         this.animalWeight = animalWeight;
+        this.livingRegion = livingRegion;
         foodEaten = 0;
 
+    }
+
+    public
+    String getLivingRegion () {
+        return livingRegion;
     }
 
     public
@@ -45,13 +52,15 @@ class Animal {
 
     protected
     DecimalFormat format () {
-        return new DecimalFormat ("#.#");
+        return new DecimalFormat ("##.##");
     }
+
 
     @Override
     public
     String toString () {
-        return String.format ("%s[%s, %s, ",getClass ().getSimpleName (),
-                getAnimalName (), format ().format (getAnimalWeight ()));
+
+        return String.format ("%s[%s, %s, %s, %d]", getClass ().getSimpleName (), getAnimalName (),
+                format ().format (getAnimalWeight ()), getLivingRegion (), getFoodEaten ());
     }
 }
