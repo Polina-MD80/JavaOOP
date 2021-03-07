@@ -23,11 +23,7 @@ class Cat extends Felime {
         System.out.println ("Meowwww");
     }
 
-    @Override
-    protected
-    void eat (Food food) {
-        super.eat (food);
-    }
+
 
     @Override
     public
