@@ -1,6 +1,7 @@
 package MilitaryElite;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -19,7 +20,10 @@ class CommandoImpl extends SpecialisedSoldierImpl {
 
     public
     Collection<Mission> getMissions(){
-        return this.missionsSet;
+        return Collections.unmodifiableSet (this.missionsSet);
+    }
+    public void completeMission(){
+
     }
 
     @Override
