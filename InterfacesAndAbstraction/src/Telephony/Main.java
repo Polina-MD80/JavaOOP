@@ -18,7 +18,7 @@ class Main {
 
 
 
-        System.out.print (smartphone.call ());
+        System.out.println (smartphone.call ());
         System.out.println (smartphone.browse ());
 
 
