@@ -62,6 +62,7 @@ class CommandImpl implements CommandInterface {
     @Override
     public
     void handleInput (String input) {
+        init ();
         String[] tokens = input.split ("\\s+");
 
         String commandName = tokens[0];
