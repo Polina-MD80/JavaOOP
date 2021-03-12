@@ -11,6 +11,7 @@ public class Main {
         CommandInterface commandInterface = Initialization.buildCommandInterface(text);
 
         String inputLine = scanner.nextLine();
+        commandInterface.init ();
 
         while(!inputLine.equals("exit")) {
             commandInterface.handleInput(inputLine);
