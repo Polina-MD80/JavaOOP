@@ -30,7 +30,8 @@ public class CommandImpl implements CommandInterface {
         @Override
         public
         void invokeOn (StringBuilder text, int startIndex, int endIndex) {
-            text.replace (startIndex+1,endIndex,cutPart);
+            text.replace (startIndex,endIndex,cutPart);
+            cutPart = "";
         }
     }
 
