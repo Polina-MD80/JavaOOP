@@ -46,6 +46,7 @@ class MessageLogger implements Logger {
     void logFatal (String date, String message) {
         callAllAppenders (date, ReportLevel.FATAL,message);
     }
+
     private void callAllAppenders(String date, ReportLevel reportLevel, String message){
         for (Appender appender : appenders) {
             appender.append(date,reportLevel,message);
