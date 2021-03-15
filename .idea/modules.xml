@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/InterfacesAndAbstraction/InterfacesAndAbstraction.iml" filepath="$PROJECT_DIR$/InterfacesAndAbstraction/InterfacesAndAbstraction.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaOOP.iml" filepath="$PROJECT_DIR$/JavaOOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Polymorphism/Polymorphism.iml" filepath="$PROJECT_DIR$/Polymorphism/Polymorphism.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Refection/Refection.iml" filepath="$PROJECT_DIR$/Refection/Refection.iml" />
       <module fileurl="file://$PROJECT_DIR$/SOLID/SOLID.iml" filepath="$PROJECT_DIR$/SOLID/SOLID.iml" />
       <module fileurl="file://$PROJECT_DIR$/WorkingWithAbstractions/WorkingWithAbstractions.iml" filepath="$PROJECT_DIR$/WorkingWithAbstractions/WorkingWithAbstractions.iml" />
     </modules>
