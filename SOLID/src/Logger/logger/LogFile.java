@@ -22,7 +22,7 @@ class LogFile implements File {
     public
     void write (String message) {
             content.append (message);
-            this.size = thisMessageSize(message);
+            this.size += thisMessageSize(message);
     }
 
     private

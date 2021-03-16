@@ -13,8 +13,7 @@ class ConsoleAppender extends BaseAppender {
     }
 
     @Override
-    public
-    void append (String data, ReportLevel reportLevel, String message) {
-       super.append (data, reportLevel, message);
+    public void append(String message) {
+        System.out.println(message);
     }
 }

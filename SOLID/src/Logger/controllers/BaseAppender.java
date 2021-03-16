@@ -9,6 +9,7 @@ public abstract
 class BaseAppender implements Appender {
     private Layout layout;
     private ReportLevel reportLevel;
+    private int messagesAppendedCount;
 
     protected
     BaseAppender (Layout layout) {
@@ -20,14 +21,27 @@ class BaseAppender implements Appender {
         return reportLevel;
     }
 
-    public
-    void append (String data, ReportLevel reportLevel, String message) {
-        System.out.println (this.layout.format (data, reportLevel, message));
+    @Override
+    public void appendMessage(String datetime, ReportLevel reportLevel, String message) {
+        if (reportLevel.ordinal() >= this.reportLevel.ordinal()) {
+            String result = this.layout.format (datetime, reportLevel, message);
+            this.append(result);
+            this.messagesAppendedCount++;
+        }
     }
-    public void setReportLevel(ReportLevel reportLevel){
+
+    protected abstract void append(String result);
+
+    public
+    void setReportLevel (ReportLevel reportLevel) {
         this.reportLevel = reportLevel;
     }
 
-
-
+    @Override
+    public
+    String toString () {
+        return String.format ("Appender type: %s, Layout type: %s, Report level: %s, Messages appended: %d",
+                this.getClass ().getSimpleName (),this.layout.getClass ().getSimpleName (),
+                this.reportLevel.name (), this.messagesAppendedCount);
+    }
 }

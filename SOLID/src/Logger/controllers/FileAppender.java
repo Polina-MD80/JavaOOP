@@ -22,7 +22,12 @@ class FileAppender extends BaseAppender{
     }
 
     @Override
-    public void append(String date, ReportLevel reportLevel, String message){
-        this.file.write (String.format ("%s - %s - %s", date, reportLevel, message));
+    public void append(String message) {
+        this.file.write(message);
+    }
+    @Override
+    public
+    String toString () {
+        return String.format ("%s, File size: %d", super.toString (),this.file.getSize ());
     }
 }
