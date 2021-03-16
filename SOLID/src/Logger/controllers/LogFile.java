@@ -5,7 +5,7 @@ import Logger.Interfaces.File;
 public
 class LogFile implements File {
     private int size;
-    private StringBuilder content;
+    private final StringBuilder content;
 
     public
     LogFile () {
