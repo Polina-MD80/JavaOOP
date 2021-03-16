@@ -2,8 +2,6 @@ package Logger.controllers;
 
 import Logger.Interfaces.File;
 import Logger.Interfaces.Layout;
-import Logger.logger.LogFile;
-import Logger.enums.ReportLevel;
 
 public
 class FileAppender extends BaseAppender{

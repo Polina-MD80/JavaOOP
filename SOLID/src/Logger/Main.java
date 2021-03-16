@@ -1,17 +1,7 @@
 package Logger;
 
-import Logger.Interfaces.Appender;
-import Logger.controllers.ConsoleAppender;
-import Logger.controllers.FileAppender;
-import Logger.controllers.SimpleLayout;
-import Logger.Interfaces.Layout;
-import Logger.Interfaces.Logger;
-import Logger.controllers.XmlLayout;
 import Logger.engine.Engine;
-import Logger.enums.ReportLevel;
-import Logger.logger.LogFile;
-import Logger.logger.MessageLogger;
-import Logger.Interfaces.File;
+
 public
 class Main {
     public static

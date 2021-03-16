@@ -1,4 +1,4 @@
-package Logger.logger;
+package Logger.controllers;
 
 import Logger.Interfaces.File;
 
