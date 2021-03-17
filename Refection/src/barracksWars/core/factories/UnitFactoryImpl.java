@@ -18,7 +18,7 @@ public class UnitFactoryImpl implements UnitFactory {
 			return (Unit) Class.forName (UNITS_PACKAGE_NAME+unitType).getConstructor ().newInstance ();
 
 		} catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-			throw new ExecutionControl.NotImplementedException ("message");
+			throw new IllegalStateException (e);
 		}
 
 	}
