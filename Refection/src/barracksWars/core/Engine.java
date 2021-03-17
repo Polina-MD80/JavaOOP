@@ -46,7 +46,7 @@ class Engine implements Runnable {
         }
     }
 
-    // TODO: refactor for problem 4
+
     private
     String interpretCommand (String[] data, String commandName) throws ExecutionControl.NotImplementedException {
         commandName = Character.toUpperCase (commandName.charAt (0)) + commandName.substring (1);
