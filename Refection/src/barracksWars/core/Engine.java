@@ -14,13 +14,11 @@ import java.lang.reflect.InvocationTargetException;
 public
 class Engine implements Runnable {
 
-    private Repository repository;
-    private UnitFactory unitFactory;
+   private CommandInterpreter commandInterpreter;
 
     public
-    Engine (Repository repository, UnitFactory unitFactory) {
-        this.repository = repository;
-        this.unitFactory = unitFactory;
+    Engine (CommandInterpreter commandInterpreter) {
+        this.commandInterpreter = commandInterpreter;
     }
 
     @Override
@@ -32,8 +30,8 @@ class Engine implements Runnable {
             try {
                 String   input       = reader.readLine ();
                 String[] data        = input.split ("\\s+");
-                String   commandName = data[0];
-                String   result      = interpretCommand (data, commandName);
+                Executable executable = commandInterpreter.interpretCommand (data, data[0]);
+                String   result      = executable.execute ();
                 if (result.equals ("fight")) {
                     break;
                 }
@@ -47,18 +45,5 @@ class Engine implements Runnable {
     }
 
 
-    private
-    String interpretCommand (String[] data, String commandName)  {
-        commandName = Character.toUpperCase (commandName.charAt (0)) + commandName.substring (1);
 
-        try {
-            Class<?>       aClass      = Class.forName ("barracksWars.core.commands." + commandName);
-            Constructor<?> constructor = aClass.getConstructor (String[].class, Repository.class, UnitFactory.class);
-            Executable     executable  = (Executable) constructor.newInstance (data, this.repository, this.unitFactory);
-            return executable.execute ();
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-            throw new RuntimeException ("Invalid command!");
-        }
-
-    }
 }
