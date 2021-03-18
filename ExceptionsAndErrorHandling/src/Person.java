@@ -49,5 +49,11 @@ class Person {
         if (name == null || name.trim ().isEmpty ()){
             throw new IllegalArgumentException ("The " + type + " name cannot be blank or empty");
         }
+        for (int i = 0; i < name.length (); i++) {
+
+            if (!Character.isAlphabetic (name.charAt (i))){
+                throw new IllegalArgumentException ("The " + type + " name must contain only letters.");
+            }
+        }
     }
 }

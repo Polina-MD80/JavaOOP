@@ -18,7 +18,7 @@ class Main {
         Field[]     declaredFields = aClass.getDeclaredFields ();
         List<Field> toPrint        = new LinkedList<> ();
         while (!"HARVEST".equals (command)) {
-            for (Field field : declaredFields) {
+            /*for (Field field : declaredFields) {
                 if (command.equals ("private") && Modifier.isPrivate (field.getModifiers ())) {
                     toPrint.add (field);
                 } else if (command.equals ("protected") && Modifier.isProtected (field.getModifiers ())) {
@@ -28,8 +28,15 @@ class Main {
                 } else if (command.equals ("all")){
                 	toPrint.add (field);
 				}
-            }
 
+            }*/
+            if (command.equals ("all")){
+                toPrint.addAll (Arrays.asList (declaredFields));
+            }else {
+                String finalCommand = command;
+                Arrays.stream (declaredFields).filter (f-> Modifier.toString (f.getModifiers ()).equals (finalCommand))
+                        .forEach (toPrint::add);
+            }
 
             command = scanner.nextLine ();
         }
