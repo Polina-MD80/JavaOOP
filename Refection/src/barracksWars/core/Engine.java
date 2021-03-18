@@ -57,7 +57,7 @@ class Engine implements Runnable {
             Executable     executable  = (Executable) constructor.newInstance (data, this.repository, this.unitFactory);
             return executable.execute ();
         } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-            throw new RuntimeException ("Invalid command");
+            throw new RuntimeException ("Invalid command!");
         }
 
     }

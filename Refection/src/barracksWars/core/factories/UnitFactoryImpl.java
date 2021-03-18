@@ -22,7 +22,7 @@ class UnitFactoryImpl implements UnitFactory {
 
         } catch (ClassNotFoundException | NoSuchMethodException
                 | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-            throw new IllegalStateException ("Invalid Unit!");
+            throw new RuntimeException ("Invalid Unit!");
         }
 
     }

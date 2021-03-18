@@ -6,7 +6,7 @@ import barracksWars.interfaces.UnitFactory;
 import jdk.jshell.spi.ExecutionControl;
 
 public
-class Add extends Command{
+class Add extends Command {
     public
     Add (String[] data, Repository repository, UnitFactory unitFactory) {
         super (data, repository, unitFactory);
@@ -15,14 +15,10 @@ class Add extends Command{
     @Override
     public
     String execute () {
-        String unitType  = getData()[1];
-        Unit         unitToAdd = null;
-        try {
-            unitToAdd = getUnitFactory ().createUnit(unitType);
-        } catch (IllegalStateException e) {
-            throw new IllegalStateException ("Invalid unit!");
-        }
-        getRepository ().addUnit(unitToAdd);
+        String unitType  = getData ()[1];
+        Unit   unitToAdd = null;
+        unitToAdd = getUnitFactory ().createUnit (unitType);
+        getRepository ().addUnit (unitToAdd);
         return unitType + " added!";
     }
 }
