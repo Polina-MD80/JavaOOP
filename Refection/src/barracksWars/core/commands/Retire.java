@@ -18,7 +18,7 @@ class Retire extends Command {
         try {
             getRepository ().removeUnit (getData ()[1]);
            result = getData ()[1] + " retired!";
-        } catch (ExecutionControl.NotImplementedException e) {
+        } catch (IllegalStateException e) {
          result =  e.getMessage ();
 
         }return result;

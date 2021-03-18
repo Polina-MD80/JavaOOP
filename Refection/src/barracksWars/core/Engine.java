@@ -40,7 +40,7 @@ class Engine implements Runnable {
                 System.out.println (result);
             } catch (RuntimeException e) {
                 System.out.println (e.getMessage ());
-            } catch (IOException | ExecutionControl.NotImplementedException e) {
+            } catch (IOException  e) {
                 e.printStackTrace ();
             }
         }
@@ -48,7 +48,7 @@ class Engine implements Runnable {
 
 
     private
-    String interpretCommand (String[] data, String commandName) throws ExecutionControl.NotImplementedException {
+    String interpretCommand (String[] data, String commandName)  {
         commandName = Character.toUpperCase (commandName.charAt (0)) + commandName.substring (1);
 
         try {

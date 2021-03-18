@@ -43,9 +43,9 @@ class UnitRepository implements Repository {
     }
 
     public
-    void removeUnit (String unitType) throws ExecutionControl.NotImplementedException {
+    void removeUnit (String unitType) {
         if (!amountOfUnits.containsKey (unitType)|| amountOfUnits.get (unitType)==0) {
-            throw new ExecutionControl.NotImplementedException ("No such units in repository.");
+            throw new IllegalStateException ("No such units in repository.");
         }
 
         amountOfUnits.put (unitType, amountOfUnits.get (unitType)-1);
