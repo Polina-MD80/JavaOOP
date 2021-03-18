@@ -19,8 +19,8 @@ class Add extends Command{
         Unit         unitToAdd = null;
         try {
             unitToAdd = getUnitFactory ().createUnit(unitType);
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new IllegalStateException (e);
+        } catch (IllegalStateException e) {
+            throw new IllegalStateException ("Invalid command!");
         }
         getRepository ().addUnit(unitToAdd);
         return unitType + " added!";
