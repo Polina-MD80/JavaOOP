@@ -34,7 +34,8 @@ class Main {
                 toPrint.addAll (Arrays.asList (declaredFields));
             }else {
                 String finalCommand = command;
-                Arrays.stream (declaredFields).filter (f-> Modifier.toString (f.getModifiers ()).equals (finalCommand))
+                Arrays.stream (declaredFields)
+                        .filter (f-> Modifier.toString (f.getModifiers ()).equals (finalCommand))
                         .forEach (toPrint::add);
             }
 
