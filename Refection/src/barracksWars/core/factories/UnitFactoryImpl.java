@@ -17,9 +17,11 @@ class UnitFactoryImpl implements UnitFactory {
     Unit createUnit (String unitType) {
 
         try {
-            return (Unit) Class.forName (UNITS_PACKAGE_NAME + unitType).getConstructor ().newInstance ();
+            return (Unit) Class.forName (UNITS_PACKAGE_NAME + unitType)
+                    .getConstructor ().newInstance ();
 
-        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+        } catch (ClassNotFoundException | NoSuchMethodException
+                | IllegalAccessException | InstantiationException | InvocationTargetException e) {
             throw new IllegalStateException ("Invalid Unit!");
         }
 
