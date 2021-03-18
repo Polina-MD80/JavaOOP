@@ -20,7 +20,7 @@ class Add extends Command{
         try {
             unitToAdd = getUnitFactory ().createUnit(unitType);
         } catch (IllegalStateException e) {
-            throw new IllegalStateException ("Invalid command!");
+            throw new IllegalStateException ("Invalid unit!");
         }
         getRepository ().addUnit(unitToAdd);
         return unitType + " added!";

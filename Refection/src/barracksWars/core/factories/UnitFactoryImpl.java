@@ -6,20 +6,22 @@ import jdk.jshell.spi.ExecutionControl;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class UnitFactoryImpl implements UnitFactory {
+public
+class UnitFactoryImpl implements UnitFactory {
 
-	private static final String UNITS_PACKAGE_NAME =
-			"barracksWars.models.units.";
+    private static final String UNITS_PACKAGE_NAME =
+            "barracksWars.models.units.";
 
-	@Override
-	public Unit createUnit(String unitType)  {
+    @Override
+    public
+    Unit createUnit (String unitType) {
 
-		try{
-			return (Unit) Class.forName (UNITS_PACKAGE_NAME+unitType).getConstructor ().newInstance ();
+        try {
+            return (Unit) Class.forName (UNITS_PACKAGE_NAME + unitType).getConstructor ().newInstance ();
 
-		} catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-			throw new IllegalStateException (e);
-		}
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+            throw new IllegalStateException ("Invalid Unit!");
+        }
 
-	}
+    }
 }
