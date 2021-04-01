@@ -5,11 +5,11 @@ public interface Controller {
 
     String addPeripheral(int computerId, int id, String peripheralType, String manufacturer, String model, double price, double overallPerformance, String connectionType);
 
-    String removePeripheral(String peripheralType, int computerId);
+    String removePeripheral(String peripheralType, int computerId) throws IllegalAccessException;
 
     String addComponent(int computerId, int id, String componentType, String manufacturer, String model, double price, double overallPerformance, int generation);
 
-    String removeComponent(String componentType, int computerId);
+    String removeComponent(String componentType, int computerId) throws IllegalAccessException;
 
     String buyComputer(int id);
 

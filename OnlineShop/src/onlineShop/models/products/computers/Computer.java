@@ -13,9 +13,9 @@ public interface Computer extends Product {
 
     void addComponent(Component component);
 
-    Component removeComponent(String componentType);
+    Component removeComponent(String componentType) throws IllegalAccessException;
 
     void addPeripheral(Peripheral peripheral);
 
-    Peripheral removePeripheral(String peripheralType);
+    Peripheral removePeripheral(String peripheralType) throws IllegalAccessException;
 }
